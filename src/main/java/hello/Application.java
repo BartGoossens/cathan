@@ -7,10 +7,6 @@ import ratpack.guice.Guice;
 
 import static ratpack.groovy.Groovy.groovyTemplate;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) throws Exception {
@@ -27,6 +23,5 @@ public class Application {
                         .files(f -> f.dir("public"))
                 )
         );
-        SpringApplication.run(Application.class, args);
     }
 }
