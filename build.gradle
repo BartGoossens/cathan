@@ -6,6 +6,9 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
     }
 }
+plugins {
+    id "io.ratpack.ratpack-groovy" version "1.4.5"
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -13,7 +16,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'gs-rest-service'
+    baseName = 'lijstjes'
     version =  '0.1.0'
 }
 
