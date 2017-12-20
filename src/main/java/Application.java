@@ -1,5 +1,3 @@
-package hello;
-
 import ratpack.server.BaseDir;
 import ratpack.server.RatpackServer;
 import ratpack.groovy.template.TextTemplateModule;
