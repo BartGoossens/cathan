@@ -11,7 +11,7 @@ public class Application {
         RatpackServer.start(s -> s
                 .serverConfig(c -> c
                         .baseDir(BaseDir.find())
-                        .port(80)
+//                        .port(80)
                         .env())
                 .registry(Guice.registry(b -> b
                         .module(TextTemplateModule.class, conf -> conf.setStaticallyCompile(true))))
