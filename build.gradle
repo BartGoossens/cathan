@@ -1,29 +1,20 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
 plugins {
     id "io.ratpack.ratpack-groovy" version "1.4.5"
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-
-jar {
-    baseName = 'lijstjes'
-    version =  '0.1.0'
-}
-
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+mainClassName = "Main"
 
 dependencies {
-    testCompile('com.jayway.jsonpath:json-path')
+    runtime "org.slf4j:slf4j-simple:1.7.12"
+    compile "com.heroku.sdk:heroku-jdbc:0.1.1"
+    compile "org.postgresql:postgresql:9.4-1201-jdbc4"
+    testCompile 'junit:junit:4.11'
 }
 
+task stage {
+    dependsOn installDist
+}
