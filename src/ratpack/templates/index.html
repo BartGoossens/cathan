@@ -2,25 +2,24 @@
 <html>
 <head>
   <title>Winkel lijstje</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <!--link rel="stylesheet" href="css/style.css" /-->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
-<div id="page">
-  <h1 id="header">List</h1>
-  <h2>Buy groceries <span id="counter"></span></h2>
-  <ul>
-    <li id="one" class="hot"><em>fresh</em> figs</li>
-    <li id="two" class="hot">pine nuts</li>
-    <li id="three" class="hot">honey</li>
-    <li id="four">balsamic vinegar</li>
-  </ul>
-  <div id="newItemButton"><button href="#" id="showForm">new item</button></div>
-  <form id="newItemForm">
-    <input type="text" id="itemDescription" placeholder="Add description" />
-    <input type="submit" id="add" value="add" />
-  </form>
+<div id="page" data-role="page">
+    <div class="ui-content">
+        <input type="text" id="item" />
+        <input type="button" value="Add item to list" onclick="appendToList()"/>
+        <div id="items">
+        </div>
+    </div>
 </div>
-<script src="js/jquery-1.11.0.js"></script>
-<script src="js/index.js"></script>
+
+
+<!--script src="js/jquery-1.11.0.js"></script>
+<script src="js/index.js"></script-->
 </body>
 </html>
