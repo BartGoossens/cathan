@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Winkel lijstje</title>
-  <!--link rel="stylesheet" href="css/style.css" /-->
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Winkel lijstje</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="js/index.js"></script>
 </head>
 <body>
 <div id="page" data-role="page">
     <div class="ui-content">
         <input type="text" id="item" />
-        <input type="button" value="Add item to list" onclick="appendToList()"/>
+        <input type="button" value="Voeg toe" id="plus" data-icon="plus"/>
         <div id="items">
         </div>
     </div>
 </div>
-
-
-<!--script src="js/jquery-1.11.0.js"></script>
-<script src="js/index.js"></script-->
+<script src="js/index.js"></script>
 </body>
 </html>

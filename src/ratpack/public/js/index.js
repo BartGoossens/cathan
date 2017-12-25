@@ -1,20 +1,40 @@
-  var listCreated = false;
+var listCreated = false;
+//var database = "test2"
+refreshList();
 
-  function appendToList(){
+function fillList(data) {
+    $("#list").empty();
+    $.each( data.results, function( key, val ) {
+        console.log("got: " + val);
+        var listItem = "<li id=" + key + ">" + val + "</li>";
+        $("#list").append(listItem);
+        $("#list").listview("refresh");
+    });
+}
 
-  if(!listCreated){
-      $("#items").append("<ul id='list' data-role=\"listview\" data-inset='true'></ul>");
-      listCreated = true;
-      $("#items").trigger("create");
-            $('#list').on('click', 'li', function() {
-                alert("Works"); // id of clicked li by directly accessing DOMElement property
-                var $this = $(this);
-                $this.remove();
-            });
-  }
-  var value = $("#item").val();
-  var listItem = "<li>" + value + "</li>";
-  $("#list").append(listItem);
-//  $("#list").append("<li>test</li>");
-  $("#list").listview("refresh");
-  }
+function refreshList(){
+    if(!listCreated){
+        $("#items").append("<ul id='list' data-role=\"listview\" data-inset='true'></ul>");
+        listCreated = true;
+        $("#items").trigger("create");
+        $('#list').on('click', 'li', function() {
+            var $this = $(this);
+            $.post ("delete/" + $(this).text(), fillList);
+            $this.remove();
+        });
+    }
+    $.getJSON("db", fillList);
+}
+
+function appendToList(){
+    var value = $("#item").val();
+    $.post("add/" + value, fillList);
+    var listItem = "<li>" + value + "</li>";
+    $("#list").append(listItem);
+    $("#list").listview("refresh");
+    $("#item").val('');
+}
+
+$( "#plus" ).bind( "click", function(event, ui) {
+        appendToList()
+});
