@@ -38,3 +38,7 @@ function appendToList(){
 $( "#plus" ).bind( "click", function(event, ui) {
         appendToList()
 });
+
+$( "#item" ).bind( "change", function(event, ui) {
+        appendToList()
+});
